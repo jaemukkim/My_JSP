@@ -15,7 +15,7 @@ public class JSFunction {
 			String script = ""
 						  + "<script>"
 						  + "    alert ('" + msg + "');"
-						  + "    location.herf = '" + url + "';"
+						  + "    location.href = '" + url + "';"
 						  + "</script>"; 
 			
 			out.println(script);     //자바 스크립트 코드를 out 내장 객체로 출력 

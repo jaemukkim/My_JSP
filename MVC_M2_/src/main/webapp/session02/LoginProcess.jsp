@@ -24,12 +24,12 @@
 	//로그인 성공 여부에 따른 처리
 	if (dto.getName() == null || dto.equals("") ){
 		out.println("로그인 실패");
-		request.setAttribute("LoginErrMsg", "로그인 오류 입니다");
+		request.setAttribute("LoginErrMsg", "로그인 오류 입니다");	//request => 모든 사용자만
 		request.getRequestDispatcher("LoginForm.jsp").forward(request, response);
 		
 	}else {
 		out.println("로그인 성공");
-		session.setAttribute("UserId", dto.getId());
+		session.setAttribute("UserId", dto.getId());	//session 해당 사용자만
 		session.setAttribute("UserName", dto.getName());
 		response.sendRedirect("LoginForm.jsp");
 	}

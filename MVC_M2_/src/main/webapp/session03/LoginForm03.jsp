@@ -64,7 +64,7 @@
 	
 <%}else{ //로그인 상태일때	%>
 	<!-- 로그인 상태일때 HTML 처리 부분 -->
-	<
+	
 	<%= session.getAttribute("UserName") %> 회원님, 로그인 하셨습니다. <br>
 	<%= session.getAttribute("UserGrade") %> 등급입니다. <br>
 	<% if(session.getAttribute("UserGrade").equals("vip")){
