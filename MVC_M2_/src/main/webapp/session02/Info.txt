@@ -1,0 +1,7 @@
+
+1. 技记阑 贸府窍绰 抛捞喉 积己 (member) : ID, Password
+2. DTO 积己	: membership.MemberDTO
+3. DAO 积己	: membership.MemberDAO
+4. View 其捞瘤 积己
+
+

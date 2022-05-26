@@ -16,6 +16,7 @@
     <welcome-file>kjm.html</welcome-file>
   </welcome-file-list>
   
+  
   <!-- 오라클 데이타 베이스 접속 정보  -->
   <context-param>
   	<param-name>OracleDriver</param-name>
