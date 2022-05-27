@@ -6,7 +6,7 @@
 <SCRIPT language="javascript">
  function view(temp) {
   if (temp.length >0) { 
-   url = "http://localhost:9393/ShoppingMall/image/" + temp;
+   url = "http://localhost:9393/ShoppingMall/upload/" + temp;
    window.open(url, "win", "height=350,width=450,toolbar=0,menubar=0,scrollbars=1,resizable=1,status=0");
   }
  }
@@ -83,7 +83,7 @@
  Vector large=new Vector();
  Vector description=new Vector();
  
- String url = "http://localhost:9393/ShoppingMall/shop/image/";
+ String url = "http://localhost:9393/ShoppingMall/upload/";
  
  NumberFormat nf= NumberFormat.getNumberInstance();
  

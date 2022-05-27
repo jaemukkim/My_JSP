@@ -53,12 +53,18 @@
   else 
    id=1;
 
+  
+  // saleorder 테이블에 Insert : 폼에서 주문서
   sql= "insert into saleorder(id,name,orderdate,addr,tel," ;
   sql= sql + "pay,cardno,prodcount,total)" ; 
   sql= sql + " values("+id+",'"+wname+"','"+ymd+"','"+addr+"','"+tel  ;
   sql= sql + "','" + pay + "','" + cardno + "',"+count+","+total+")" ;
   cnt = st.executeUpdate(sql);
  
+  //item 테이블 : 세션의 정보를 가져와서 DB에 저장
+	  	//상품 주문에 대한 자세한 정보가 저장, 구매한 상품명, 판매가격, 개수
+	  	
+	  	
   if (cnt >0) {
    for (int i=0; i< a.length ;i++) {
     long pid =Long.parseLong(a[i].trim());

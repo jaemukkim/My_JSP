@@ -4,14 +4,17 @@
 <HEAD><TITLE>상품 설명(이미지) 보기</TITLE>
 <SCRIPT language="javascript">
  function view(temp) {
-  filename = "http://localhost:9393/ShoppingMall/image/" + temp;
+  filename = "http://localhost:9393/ShoppingMall/upload/" + temp;
   i = window.open(filename, "win", "height=350,width=450,toolbar=0,menubar=0,scrollbars=1,resizable=1,status=0");
  }
 </SCRIPT>
 </HEAD>
 <BODY>
 
-<!-- DB 연결 설정 --> 
+<!-- DB 연결 설정 -->
+   
+
+ 
 <%@ include file = "dbconn_mysql.jsp" %>
 
 
@@ -28,7 +31,7 @@
    pn=request.getParameter("pname");
   
  //pn = new String(pn.getBytes("ISO-8859-1"),"euc-kr");
- out.println(pn);
+ //out.println(pn);
 
  String sql=null;
  //Connection con= null;

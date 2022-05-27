@@ -10,6 +10,6 @@
 	String url = "jdbc:oracle:thin:@localhost:1521:XE";
 	
 	Class.forName(driver);
-	conn = DriverManager.getConnection (url, "hr", "hr");
+	conn = DriverManager.getConnection (url, "hr2", "1234");
 
 %>

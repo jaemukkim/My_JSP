@@ -152,7 +152,14 @@
   st = conn.createStatement();
   String sql = "select * from product";
   sql = sql+ cond+  " order by id";
+  
+  //out.println(sql);
+  //if(true) return;
+  
+  
   rs = st.executeQuery(sql);
+
+  
   if (!(rs.next()))  {
    out.println("상품이 없습니다");
   } else {

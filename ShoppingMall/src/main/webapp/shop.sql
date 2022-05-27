@@ -1,6 +1,6 @@
-create database member;
+create database shoppingmall;
 
-use member;
+use shoppingmall;
 
 create table product(
 id		int primary key,
@@ -37,3 +37,7 @@ pname		varchar(40),
 quantity	int default 0,
 price		int default 0
 );
+
+select * from product;
+select * from saleorder;
+select * from item;

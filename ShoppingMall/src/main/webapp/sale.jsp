@@ -27,7 +27,7 @@ try {
   }
  }
  
- session.putValue(id, new Integer(qty));   
+ session.putValue(id, new Integer(qty));   	//세션 변수에 id (제품 고유번호), qty : 구매 개수 
  out.println("바구니에 넣었습니다.");
  out.print("[<A href=\"shop_list.jsp?go="+ request.getParameter("go"));
  out.print("&cat="+ ca +"&pname="+pn+"\">계속 쇼핑하기</A>]");
