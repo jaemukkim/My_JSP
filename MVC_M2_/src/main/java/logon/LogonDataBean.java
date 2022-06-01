@@ -2,17 +2,16 @@ package logon;
 
 import java.sql.Timestamp;
 
-public class LogonDataBean {	//DTO, VO, Bean (DTO, DAO) : 백엔드에서 처리하는 Java 페이지
+public class LogonDataBean {		//DTO , VO, Bean (DTO, DAO ) : 백엔드에서 처리하는 Java페이지.
 	
-	//데이터를 Setter 로 주입 받아서 Getter로 출력 해주는 전달자 역할
+		//데이터를 Setter 로 주입 받아서 Getter로 출력 해주는 전달자 역할 
 	
-	private String id;
+	private String id; 
 	private String passwd;
 	private String name;
-	private Timestamp reg_date;		//가입한 날짜의 시간을 등록
-	private String address;
+	private Timestamp reg_date; 	//가입 날짜의 시간을 등록 
+	private String address; 
 	private String tel;
-	
 	
 	
 	
@@ -51,7 +50,7 @@ public class LogonDataBean {	//DTO, VO, Bean (DTO, DAO) : 백엔드에서 처리하는 Ja
 	}
 	public void setTel(String tel) {
 		this.tel = tel;
-	}
+	} 
 	
 	
 	

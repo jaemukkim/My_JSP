@@ -1,44 +1,45 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta charset="EUC-KR">
 <title>Insert title here</title>
 </head>
 <body>
 
-<%
-	String user_id = request.getParameter("id");
-	String user_pw = request.getParameter("pass");
+	<%
+		String user_id = request.getParameter("id"); 
+		String user_pw = request.getParameter("pass"); 
+		
+		if (user_id.equals("admin") && user_pw.equals("1234")  ){
+			// Äí±â »ı¼º , Å¬¶óÀÌ¾ğÆ® HDD ¿¡ ÄíÅ°ÀÇ °ªÀ» ÀúÀå 
+			
+			//ÄíÅ°´Â »ı¼ºÀÚ¿¡¼­ º¯¼ö ÀÌ¸§°ú °ªÀ» ÇÒ´ç ;  
+			Cookie cookie_id = new Cookie("userID", user_id); 
+			Cookie cookie_pw = new Cookie("userPW", user_pw);
+			
+			//ÄíÅ° ¼³Á¤ 
+			cookie_id.setPath(request.getContextPath()); //ÄíÅ°¸¦ »ç¿ëÇÒ ¼­¹öÀÇ °æ·Î ¼³Á¤ 
+			cookie_id.setMaxAge( 60 * 60 );    //3600ÃÊ == 1½Ã°£ 
+			
+			cookie_pw.setPath(request.getContextPath()); 
+			cookie_pw.setMaxAge(60 * 60);    
+					
+			//ÄíÅ°¸¦ response °´Ã¼¸¦ »ç¿ëÇØ¼­ »ı¼ºµÈ ÄíÅ°¸¦ Client HDD¿¡ ÀúÀå 
+			response.addCookie(cookie_id); 
+			response.addCookie(cookie_pw); 
+			
+			out.println ("ÄíÅ° »ı¼ºÀÌ ¼º°ø Çß½À´Ï´Ù. "); 
+			out.println (user_id + "´Ô È¯¿µ ÇÕ´Ï´Ù. "); 
+			
+		}else {
+			out.println ("ÄíÅ° »ı¼ºÀÌ ½ÇÆĞ ÇÏ¿´½À´Ï´Ù."); 
+		}
+		
 	
-	if(user_id.equals("admin") && user_pw.equals("1234")){
-		// ì¿ í‚¤ ìƒì„±, í´ë¼ì´ì–¸íŠ¸ HDD ì— ì¿ í‚¤ì˜ ê°’ì„ ì €ì¥
-		
-		//ì¿ í‚¤ëŠ” ìƒì„±ìì—ì„œ ë³€ìˆ˜ ì´ë¦„ê³¼ ê°’ì„ í• ë‹¹
-		Cookie cookie_id = new Cookie("userID", user_id);
-		Cookie cookie_pw = new Cookie("userPW", user_pw);
-		
-		//ì¿ í‚¤ ì„¤ì •
-		cookie_id.setPath(request.getContextPath());  //ì¿ í‚¤ë¥¼ ì‚¬ìš©í•  ì„œë²„ì˜ ê²½ë¡œ ì„¤ì •
-		cookie_id.setMaxAge(60 * 60);	//3600ì´ˆ == 1ì‹œê°„
-		
-		cookie_pw.setPath(request.getContextPath());
-		cookie_pw.setMaxAge(60 * 60);
-		
-		
-		//ì¿ í‚¤ë¥¼ response ê°ì²´ë¥¼ ì‚¬ìš©í•´ì„œ ìƒì„±ëœ ì¿ í‚¤ë¥¼ Client HDDì— ì €ì¥
-		response.addCookie(cookie_id);
-		response.addCookie(cookie_pw);
-		
-		out.println("ì¿ í‚¤ ìƒì„±ì´ ì„±ê³µ í–ˆìŠµë‹ˆë‹¤. ");
-		out.println(user_id + "ë‹˜ í™˜ì˜ í•©ë‹ˆë‹¤. ");
-	}else {
-		out.println("ì¿ í‚¤ ìƒì„±ì´ ì‹¤íŒ¨ í–ˆìŠµë‹ˆë‹¤. ");
-	}
-
-
-%>
+	
+	%>
 
 </body>
 </html>

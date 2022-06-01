@@ -52,7 +52,6 @@ public class WriteController extends HttpServlet {
 			
 			//파일 업로드 객체 생성  
 			MultipartRequest mr = FileUtil.uploadFile(request, saveDirectory, maxPostSize);
-			System.out.println(maxPostSize);
 		
 			//객체 생성 실패시 처리 할 내용 
 			if (mr == null) {  // 객체 생성 실패 ( 1MB 이상의 용량의 파일 전송시 ) 

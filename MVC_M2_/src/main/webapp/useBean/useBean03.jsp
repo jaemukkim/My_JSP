@@ -4,16 +4,16 @@
 <html>
 <head>
 <meta charset="EUC-KR">
-<title>Bean의 Gettor로 RAM의 값을 호출</title>
+<title>Bean 의 Gettor 로 RAM의 값을 호출 </title>
 </head>
 <body>
 
-	<jsp:useBean id = "person" class = "dao.Person" scope = "request"/>
-	
-	<p> 아이디 : <%= person.getId() %>
-	<p> 이름 : <%= person.getName() %>
-	
-	
+
+   <jsp:useBean id = "person" class = "dao.Person" scope = "request" /> 
+   
+   <p> 아이디 : <%= person.getId() %>
+   <p> 이름 : <%= person.getName() %>
+
 
 
 </body>

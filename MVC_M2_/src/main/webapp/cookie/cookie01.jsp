@@ -1,19 +1,18 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta charset="EUC-KR">
 <title>Insert title here</title>
 </head>
 <body>
-	<form action = "cookie01_process.jsp" method = "post">
-		<p> ì•„ì´ë”” : <input type="text" name="id">
-		<p> íŒ¨ìŠ¤ì›Œë“œ : <input type="password" name="pass">
-		<p> <input type="submit" value="ì „ì†¡">
-	
-	
+	<form action ="cookie01_process.jsp" method = "post"> 
+		<p> ¾ÆÀÌµğ  :  <input type = "text" name = "id"> 
+		<p> ÆĞ½º¿öµå : <input type = "password" name = "pass">
+		<p> <input type = "submit" value = "Àü¼Û"> 	
 	</form>
+
 
 </body>
 </html>

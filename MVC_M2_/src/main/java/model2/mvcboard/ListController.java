@@ -22,7 +22,7 @@ public class ListController extends HttpServlet {
 		//1. DAO 객체 생성 (Model : 비즈니스 로직 처리 ) 
 		MVCBoardDAO dao = new MVCBoardDAO(); 
 		
-		//2.뷰에 전달할 매개변수 저장용 맵 생성 (Key,Value)
+		//2.뷰에 전달할 매개변수 저장용 맵 생성 (Key,Value) 
 	
         Map<String, Object> map = new HashMap<String, Object>();
 

@@ -1,12 +1,20 @@
 package work.crypt;
 
-import sun.misc.BASE64Decoder;
-import sun.misc.BASE64Encoder;
+import java.util.Base64;
+import java.util.Base64;
+
+
+
+	//rt.jar : Java에서 기본 제공 되는 라이브러리 
+		// C:\Program Files\Java\jre1.8.0_291\lib
 
 public class SHA256 {
 	
-	BASE64Encoder encoder = new BASE64Encoder();
-	BASE64Decoder decoder = new BASE64Decoder();
+	//Base64Encoder encoder = new BASE64Encoder();
+	//Base64Decoder decoder = new BASE64Decoder();
+	Base64 encoder = new BASE64();
+	Base64 decoder = new BASE64();
+	
 	
 	private static SHA256 s = new SHA256();
 	
@@ -252,11 +260,11 @@ public class SHA256 {
 		return byte_to_int(x, x_offset, ENDIAN);
 	}
 	//*********************************************************************************************************************************
-	// o SHA256_Transform() : 512 비트 단위 블록의 메시지를 입력 받아 연쇄변수를 갱신하는 압축 함수로써
-//		                      4 라운드(64 단계)로 구성되며 8개의 연쇄변수(a, b, c, d, e, f, g, h)를 사용
-	// o 입력                               : Message               - 입력 메시지의 포인터 변수
-//		                      ChainVar              - 연쇄변수의 포인터 변수
-	// o 출력                               :
+	// o SHA256_Transform() : 512 鍮꾪듃 �떒�쐞 釉붾줉�쓽 硫붿떆吏�瑜� �엯�젰 諛쏆븘 �뿰�뇙蹂��닔瑜� 媛깆떊�븯�뒗 �븬異� �븿�닔濡쒖뜥
+//		                      4 �씪�슫�뱶(64 �떒怨�)濡� 援ъ꽦�릺硫� 8媛쒖쓽 �뿰�뇙蹂��닔(a, b, c, d, e, f, g, h)瑜� �궗�슜
+	// o �엯�젰                               : Message               - �엯�젰 硫붿떆吏��쓽 �룷�씤�꽣 蹂��닔
+//		                      ChainVar              - �뿰�뇙蹂��닔�쓽 �룷�씤�꽣 蹂��닔
+	// o 異쒕젰                               :
 	//*********************************************************************************************************************************
 	private static void SHA256_Transform(byte[] Message, int[] ChainVar) {
 		int abcdefgh[] = new int[8];
@@ -302,8 +310,8 @@ public class SHA256 {
 	}
 
 	/**
-	@brief 연쇄변수와 길이변수를 초기화하는 함수
-	@param Info : SHA256_Process 호출 시 사용되는 구조체
+	@brief �뿰�뇙蹂��닔�� 湲몄씠蹂��닔瑜� 珥덇린�솕�븯�뒗 �븿�닔
+	@param Info : SHA256_Process �샇異� �떆 �궗�슜�릺�뒗 援ъ“泥�
 	*/
 	public static void SHA256_Init( SHA256_INFO Info ) {
 		Info.uChainVar[0] = 0x6a09e667;
@@ -319,10 +327,10 @@ public class SHA256 {
 	}
 
 	/**
-	@brief 연쇄변수와 길이변수를 초기화하는 함수
-	@param Info : SHA256_Init 호출하여 초기화된 구조체(내부적으로 사용된다.)
-	@param pszMessage : 사용자 입력 평문
-	@param inLen : 사용자 입력 평문 길이
+	@brief �뿰�뇙蹂��닔�� 湲몄씠蹂��닔瑜� 珥덇린�솕�븯�뒗 �븿�닔
+	@param Info : SHA256_Init �샇異쒗븯�뿬 珥덇린�솕�맂 援ъ“泥�(�궡遺��쟻�쑝濡� �궗�슜�맂�떎.)
+	@param pszMessage : �궗�슜�옄 �엯�젰 �룊臾�
+	@param inLen : �궗�슜�옄 �엯�젰 �룊臾� 湲몄씠
 	*/
 	public static void SHA256_Process( SHA256_INFO Info, byte[] pszMessage, int uDataLen ) {
 		int pszMessage_offset;
@@ -345,9 +353,9 @@ public class SHA256 {
 	}
 
 	/**
-	@brief 메시지 덧붙이기와 길이 덧붙이기를 수행한 후 마지막 메시지 블록을 가지고 압축함수를 호출하는 함수
-	@param Info : SHA256_Init 호출하여 초기화된 구조체(내부적으로 사용된다.)
-	@param pszDigest : 암호문
+	@brief 硫붿떆吏� �뜤遺숈씠湲곗� 湲몄씠 �뜤遺숈씠湲곕�� �닔�뻾�븳 �썑 留덉�留� 硫붿떆吏� 釉붾줉�쓣 媛�吏�怨� �븬異뺥븿�닔瑜� �샇異쒗븯�뒗 �븿�닔
+	@param Info : SHA256_Init �샇異쒗븯�뿬 珥덇린�솕�맂 援ъ“泥�(�궡遺��쟻�쑝濡� �궗�슜�맂�떎.)
+	@param pszDigest : �븫�샇臾�
 	*/
 	public static void SHA256_Close( SHA256_INFO Info, byte[] pszDigest ) {
 		int i, Index;
@@ -379,10 +387,10 @@ public class SHA256 {
 	}
 
 	/**
-	@brief 사용자 입력 평문을 한번에 처리
-	@param pszMessage : 사용자 입력 평문
-	@param pszDigest : 암호문
-	@remarks 내부적으로 SHA256_Init, SHA256_Process, SHA256_Close를 호출한다.
+	@brief �궗�슜�옄 �엯�젰 �룊臾몄쓣 �븳踰덉뿉 泥섎━
+	@param pszMessage : �궗�슜�옄 �엯�젰 �룊臾�
+	@param pszDigest : �븫�샇臾�
+	@remarks �궡遺��쟻�쑝濡� SHA256_Init, SHA256_Process, SHA256_Close瑜� �샇異쒗븳�떎.
 	*/
 	public static void SHA256_Encrypt( byte[] pszMessage, int uPlainTextLen, byte[] pszDigest ) {
 		SHA256_INFO info = new SHA256_INFO();

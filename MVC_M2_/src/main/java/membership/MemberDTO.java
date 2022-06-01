@@ -1,19 +1,20 @@
 package membership;
 
 public class MemberDTO {
-
-	//멤버 변수 선언 (테이블의 컬럼명)
-	private String id;
-	private String pass;
-	private String name;
-	private String regidate;	
 	
-	//생성자 (디버깅을 위해서 생성)
+	//멤버 변수 선언 (테이블의 컬럼명) 
+	
+	private String id ; 
+	private String pass; 
+	private String name; 
+	private String regidate;  
+	
+	//생성자 (디버깅을 위해서 생성) 
 	public MemberDTO() {
-		System.out.println("MemberDTO가 잘 생성되었습니다.");
+		System.out.println("MemberDTO 가 잘 생성되었습니다. ");
 	}
 	
-	//getter, setter 생성
+	//getter, setter 생성 
 
 	public String getId() {
 		return id;
@@ -46,8 +47,10 @@ public class MemberDTO {
 	public void setRegidate(String regidate) {
 		this.regidate = regidate;
 	}
-	
+		
 
 	
 	
+	
+
 }

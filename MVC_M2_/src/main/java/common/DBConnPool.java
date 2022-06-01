@@ -12,10 +12,10 @@ import javax.sql.DataSource;
 
 public class DBConnPool {
 	
-	public Connection con;
-	public Statement stmt;
-	public PreparedStatement psmt;
-	public ResultSet rs; 
+	public  Connection con;
+	public  Statement stmt;
+	public  PreparedStatement psmt;
+	public  ResultSet rs; 
 	
 	//기본 생성자 
 	public DBConnPool() {
@@ -61,7 +61,7 @@ public class DBConnPool {
 	
 	
 	//자원 연결 해제  (자원 반납) : close() 메소드 호출시 자원을 반납하도록 설정 
-    public void close() {
+    public  void close() {
         try {            
             if (rs != null) rs.close();
             if (stmt != null) stmt.close();

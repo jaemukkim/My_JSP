@@ -7,22 +7,29 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-	<jsp:useBean id= "person" class= "dao.Person" scope = "request"/>
+	<jsp:useBean id = "person" class = "dao.Person" scope = "request" />
 	
-	<p> 아이디 : <%= person.getId()  %>
+	<p> 아이디 : <%= person.getId() %>
 	<p> 이름 : <%= person.getName() %>
 	
-		<%
-			//Setter 주입
-			person.setId(20220530);
-			person.setName("김유신");
+	<p><p> 
+	
+	
+		//기본 생성자 : 실행 부는 비어 있음. 
+		<% 
 		
+			person.setId(20220530); 
+			person.setName("김유신"); 
+			
 		%>
 		
-		<p><p>
+		<p> <p> 
 		
 		<jsp:include page = "useBean03.jsp" />
+		
+		
+	
+	
 
 </body>
 </html>

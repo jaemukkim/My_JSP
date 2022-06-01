@@ -1,10 +1,12 @@
 
-Session 시간 설정 ( 톰켓의 기본 세션 유지 시간 : 30분 )
-  1. Web.xml (분)	<<== 전역 세팅 (모든 사용자에게 기본으로 세팅)
+Session 시간 설정 (톰켓의 기본 세션 유지 시간 : 30 분 )
+  1. Web.xml (분)  <<== 전역 셋팅 (모든 사용자에게 기본으로 셋팅)
   		<session-config>
   			<session-timeout>20</session-timeout>
   		</session-config>
-  
+  		
   2. session.setMaxInactiveInterval(초) : 특정 사용자마다 세션 유지 기간을 다르게 설정 
   
-  3. 
+   
+  
+  
